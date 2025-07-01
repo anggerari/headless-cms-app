@@ -13,11 +13,17 @@ class Index extends Component
     use WithFileUploads;
     use WithPagination;
 
-    #[Rule('required|image|max:2048')] // 2MB Max
     public $newImage;
 
     public bool $showConfirmDeleteModal = false;
     public ?Media $mediaToDelete = null;
+
+    protected function rules()
+    {
+        return [
+            'newImage' => 'required|image|max:2048', // 2MB Max
+        ];
+    }
 
     /**
      * Stores the newly uploaded image in the media library.
