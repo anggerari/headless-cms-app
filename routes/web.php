@@ -7,9 +7,7 @@ use App\Livewire\Admin\Pages\Index as PageIndex;
 use App\Livewire\Admin\Categories\Index as CategoryIndex;
 use App\Livewire\Admin\Media\Index as MediaIndex;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/login');
 
 Route::middleware([
     'auth:sanctum',

@@ -1,61 +1,122 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Headless CMS with TALL Stack - Palmcode Technical Test
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a fully functional Headless Content Management System (CMS) built as a technical test for the Senior Laravel Developer position at Palmcode. It features a robust admin panel for content management and a versioned REST API to deliver content to any frontend application.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features Implemented
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Core Features
+- [x] **Authentication**: Secure admin-only login powered by Laravel Jetstream with the Teams feature enabled for RBAC.
+- [x] **Content Management**: Full CRUD (Create, Read, Update, Delete) functionality for:
+    - [x] **Posts**: Includes title, content, excerpt, featured image, and status management.
+    - [x] **Pages**: For managing static content.
+    - [x] **Categories**: With a many-to-many relationship to Posts.
+- [x] **Dynamic Admin UI**: The entire admin panel is built as a Single Page Application (SPA) using the TALL stack (Tailwind CSS, Alpine.js, Livewire, Laravel) for a fast, modern, and reactive user experience.
+- [x] **Public REST API**: A versioned (`/api/v1/`) RESTful API to expose all published content.
+    - [x] Endpoints for Posts, Pages, and Categories.
+    - [x] Slug-based routing for user-friendly and SEO-friendly URLs.
+- [x] **API Documentation**: Automatically generated, interactive API documentation using Scribe.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Bonus Features
+- [x] **Media Manager**: A dedicated section to upload, view, and delete images from a central library.
+- [x] **Reusable Blocks / Custom Fields**: Implemented using flexible JSON columns on the `posts` and `pages` tables, allowing for easy extension without schema changes.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tech Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend Framework**: Laravel 11
+- **UI Stack**: Livewire 3, Alpine.js, Tailwind CSS (The TALL Stack)
+- **Authentication**: Laravel Jetstream & Laravel Sanctum
+- **Database**: MySQL / PostgreSQL
+- **API Documentation**: Scribe
+- **Development Environment**: Laravel Sail (Docker)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Installation & Setup
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Follow these steps to get the project running on your local machine.
 
-### Premium Partners
+### Prerequisites
+- PHP 8.2+
+- Composer
+- Node.js 20.x (LTS) & NPM
+- Docker Desktop (if using Laravel Sail)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1. Clone the Repository
+```bash
+git clone <your-repository-url>
+cd headless-cms-app
+```
 
-## Contributing
+### 2. Install Dependencies
+Install both the PHP and JavaScript dependencies.
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Setup Environment File
+Copy the example environment file and generate your application key.
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Code of Conduct
+### 4. Configure `.env`
+Open the `.env` file and update the following database variables to match your local setup.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=headless_cms_app
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Security Vulnerabilities
+### 5. Run Database Migrations & Seeding
+This command will create all the necessary tables and populate the database with an initial admin user and some sample content.
+```bash
+php artisan migrate:fresh --seed
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 6. Link Storage
+This command creates a symbolic link from `public/storage` to `storage/app/public`, which is necessary for uploaded images to be publicly accessible.
+```bash
+php artisan storage:link
+```
 
-## License
+### 7. Start the Servers
+You need to run two servers in separate terminal windows: the PHP server and the Vite asset server.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Terminal 1: Start the Laravel Server**
+```bash
+php artisan serve
+```
+
+**Terminal 2: Start the Vite Server**
+```bash
+npm run dev
+```
+
+The application will now be running at `http://127.0.0.1:8000`.
+
+---
+
+## Usage
+
+- **Admin Panel URL**: `http://127.0.0.1:8000/login`
+- **Admin User Credentials**:
+    - **Email**: `admin@example.com`
+    - **Password**: `password`
+
+After logging in, you will be redirected to the admin dashboard where you can manage all content.
+
+### API Documentation
+The complete, interactive API documentation is generated by Scribe and can be viewed at:
+- **Docs URL**: `http://127.0.0.1:8000/docs`
+
+---
