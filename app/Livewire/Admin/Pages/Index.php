@@ -67,6 +67,6 @@ class Index extends Component
         // so we no longer need to specify it manually.
         return view('livewire.admin.pages.index', [
             'pages' => $pages,
-        ]);
+        ])->layout('layouts.app');
     }
 }

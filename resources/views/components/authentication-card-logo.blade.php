@@ -1,6 +1,16 @@
 <a href="/">
-    <svg class="size-16" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"/>
-        <path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"/>
+    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#818CF8;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <path fill="url(#grad1)" d="M24,4A20,20,0,1,0,44,24,20,20,0,0,0,24,4Zm-4,28H16V16h4Zm8,0H24V16h4Zm8,0H32V16h4Z"/>
+        <path fill="#FFFFFF" opacity="0.5" d="M14,14h20v4H14Zm0,8h20v4H14Zm0,8h20v4H14Z" transform="rotate(-20 24 24)"/>
     </svg>
+    <span class="text-2xl font-bold text-gray-700">
+        Headless CMS
+    </span>
+</a>
 </a>

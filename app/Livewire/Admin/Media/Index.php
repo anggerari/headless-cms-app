@@ -72,6 +72,6 @@ class Index extends Component
 
         return view('livewire.admin.media.index', [
             'mediaItems' => $mediaItems,
-        ]);
+        ])->layout('layouts.app');
     }
 }

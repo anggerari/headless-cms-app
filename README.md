@@ -20,8 +20,7 @@ This project is a fully functional Headless Content Management System (CMS) buil
 
 ### Bonus Features
 - [x] **Media Manager**: A dedicated section to upload, view, and delete images from a central library.
-- [x] **Reusable Blocks / Custom Fields**: Implemented using flexible JSON columns on the `posts` and `pages` tables, allowing for easy extension without schema changes.
-
+- [x] **Reusable Blocks / Custom Fields (Backend Implementation)**: The database schema and models have been prepared with flexible `JSON` columns on the `posts` and `pages` tables. This provides a scalable foundation for adding custom fields in the future without requiring database migrations. The API resources are also configured to expose this data.
 ---
 
 ## Tech Stack
