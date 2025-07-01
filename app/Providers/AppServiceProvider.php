@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
         // For server
         if (app()->isProduction()) {
-            URL::forceScheme('https');
+            \URL::forceScheme('https');
             request()->server->set('HTTPS', request()->header('X-Forwarded-Proto', 'https') == 'https' ? 'on' : 'off');
         }
     }
