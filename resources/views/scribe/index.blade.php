@@ -97,9 +97,7 @@
             </div>
 
     <ul class="toc-footer" id="toc-footer">
-                    <li style="padding-bottom: 5px;"><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
-                            <li style="padding-bottom: 5px;"><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
-                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                        <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
@@ -177,42 +175,45 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 2,
-            &quot;title&quot;: &quot;aaa&quot;,
-            &quot;slug&quot;: &quot;aaa-1&quot;,
-            &quot;content&quot;: &quot;aaaa&quot;,
-            &quot;excerpt&quot;: &quot;aaa&quot;,
-            &quot;image_url&quot;: &quot;/storage/posts/0JUctSH0ADvDt3h9nsBXWh7x6euvoWr1B9YGS6yv.png&quot;,
-            &quot;published_at&quot;: &quot;2025-07-01T07:09:13+00:00&quot;,
+            &quot;id&quot;: 1,
+            &quot;title&quot;: &quot;Welcome to the TALL Stack&quot;,
+            &quot;slug&quot;: &quot;welcome-to-the-tall-stack&quot;,
+            &quot;content&quot;: &quot;This is a sample post about the TALL stack. It is a powerful way to build modern web applications with Laravel.&quot;,
+            &quot;excerpt&quot;: &quot;A brief introduction to the TALL stack.&quot;,
+            &quot;published_at&quot;: &quot;2025-07-01T07:38:50+00:00&quot;,
             &quot;author&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Angger Pangestu Ari&quot;
+                &quot;name&quot;: &quot;Admin User&quot;
             },
             &quot;categories&quot;: [
                 {
                     &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;technology&quot;,
-                    &quot;slug&quot;: &quot;technology&quot;
+                    &quot;name&quot;: &quot;Tech&quot;,
+                    &quot;slug&quot;: &quot;tech&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;Laravel&quot;,
+                    &quot;slug&quot;: &quot;laravel&quot;
                 }
             ]
         },
         {
-            &quot;id&quot;: 1,
-            &quot;title&quot;: &quot;aaa&quot;,
-            &quot;slug&quot;: &quot;aaa&quot;,
-            &quot;content&quot;: &quot;aaa&quot;,
-            &quot;excerpt&quot;: &quot;aaa&quot;,
-            &quot;image_url&quot;: &quot;/storage/posts/010PSvEMGyohtN5zCSxzxMDPEUwM1Ei8ChL5YfHy.png&quot;,
-            &quot;published_at&quot;: &quot;2025-07-01T07:09:07+00:00&quot;,
+            &quot;id&quot;: 2,
+            &quot;title&quot;: &quot;A Guide to Healthy Living&quot;,
+            &quot;slug&quot;: &quot;a-guide-to-healthy-living&quot;,
+            &quot;content&quot;: &quot;This post explores various tips and tricks for maintaining a healthy lifestyle, from diet to exercise.&quot;,
+            &quot;excerpt&quot;: &quot;Tips and tricks for a healthier you.&quot;,
+            &quot;published_at&quot;: &quot;2025-06-30T07:38:50+00:00&quot;,
             &quot;author&quot;: {
                 &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;Angger Pangestu Ari&quot;
+                &quot;name&quot;: &quot;Admin User&quot;
             },
             &quot;categories&quot;: [
                 {
-                    &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;technology&quot;,
-                    &quot;slug&quot;: &quot;technology&quot;
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;Lifestyle&quot;,
+                    &quot;slug&quot;: &quot;lifestyle&quot;
                 }
             ]
         }
@@ -511,10 +512,17 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;title&quot;: &quot;page 1&quot;,
-            &quot;slug&quot;: &quot;page-1&quot;,
-            &quot;body&quot;: &quot;page 1 body&quot;,
-            &quot;published_at&quot;: &quot;2025-06-30T08:22:37+00:00&quot;
+            &quot;title&quot;: &quot;About Us&quot;,
+            &quot;slug&quot;: &quot;about-us&quot;,
+            &quot;body&quot;: &quot;This is the About Us page for our amazing company. We are dedicated to building the best web applications.&quot;,
+            &quot;published_at&quot;: &quot;2025-07-01T07:38:50+00:00&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;title&quot;: &quot;Contact Us&quot;,
+            &quot;slug&quot;: &quot;contact-us&quot;,
+            &quot;body&quot;: &quot;You can contact us via email at contact@example.com.&quot;,
+            &quot;published_at&quot;: &quot;2025-07-01T07:38:50+00:00&quot;
         }
     ],
     &quot;links&quot;: {
@@ -546,8 +554,8 @@ access-control-allow-origin: *
         ],
         &quot;path&quot;: &quot;http://localhost:8000/api/v1/pages&quot;,
         &quot;per_page&quot;: 10,
-        &quot;to&quot;: 1,
-        &quot;total&quot;: 1
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
     }
 }</code>
  </pre>
@@ -811,13 +819,18 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;technology&quot;,
-            &quot;slug&quot;: &quot;technology&quot;
+            &quot;name&quot;: &quot;Tech&quot;,
+            &quot;slug&quot;: &quot;tech&quot;
         },
         {
             &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;fintechs&quot;,
-            &quot;slug&quot;: &quot;fintechs&quot;
+            &quot;name&quot;: &quot;Laravel&quot;,
+            &quot;slug&quot;: &quot;laravel&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Lifestyle&quot;,
+            &quot;slug&quot;: &quot;lifestyle&quot;
         }
     ]
 }</code>
