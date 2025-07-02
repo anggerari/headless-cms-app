@@ -30,8 +30,6 @@ This project is a fully functional Headless Content Management System (CMS) buil
 - **Authentication**: Laravel Jetstream & Laravel Sanctum
 - **Database**: MySQL / PostgreSQL
 - **API Documentation**: Scribe
-- **Development Environment**: Laravel Sail (Docker)
-
 ---
 
 ## Installation & Setup
@@ -42,7 +40,6 @@ Follow these steps to get the project running on your local machine.
 - PHP 8.2+
 - Composer
 - Node.js 20.x (LTS) & NPM
-- Docker Desktop (if using Laravel Sail)
 
 ### 1. Clone the Repository
 ```bash
